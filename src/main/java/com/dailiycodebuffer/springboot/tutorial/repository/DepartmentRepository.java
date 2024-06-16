@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department,Long> {
 
-//    @Query("select departmentName from Departments where department=?1")
-    public Department findByDepartmentName(String departmentName);
+    @Query("select d from Department d where d.departmentName=?1")
+    Department findByDepartmentName(String departmentName);
 }
